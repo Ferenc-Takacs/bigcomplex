@@ -2,6 +2,8 @@ Use python command:
 
 from complex import *
 
+The precision set or get by __getcontext().prec__ variable.
+
 Content:
 <code>
 def binom(x,y): Binomial coeficient. y can int type, x can int, float, decimal, complex, Real, Complex types
