@@ -1,4 +1,4 @@
-import math
+import math,sys
 from decimal import *
 import threading
 
@@ -22,6 +22,16 @@ def binom(x,y):
 		return 1
 	if y == 1 or y == x-1:
 		return x
+	if inttype :
+		result = x
+		x -= 1
+		i = 2
+		while i <= y:
+			result = result * x
+			result = result // i
+			x -= 1
+			i += 1
+		return result	
 	oldprec = getcontext().prec
 	ax = int(abs(x))
 	getcontext().prec = max(2 + (y+ax)//3, oldprec)
@@ -40,8 +50,6 @@ def binom(x,y):
 		x -= 1
 		i += 1
 	getcontext().prec = oldprec
-	if inttype :
-		return int(result)
 	return result
 
 def pi() :
@@ -717,19 +725,27 @@ class ComparasionError(Exception):
     pass
 
 
+def digitnumber(number) :
+	return int(math.floor(math.log10(number)))+1	
 
 
 if __name__ == '__main__' : # short module test
 
 	def ex(txt) :
 		txt1 = txt.replace("'",'"')
-		txt = "print('" + txt1 + " = '.replace('()',''), " + txt + ")"
-		exec(txt)
+		res = eval(txt,globals(),locals())
+		dig = False
+		if isinstance(res,int) :
+			dig = digitnumber(res)
+			if dig > 4300 :
+				sys.set_int_max_str_digits(dig+2)
+		print(txt.replace('()',''), '=',res)
+		if dig :
+			sys.set_int_max_str_digits(4300)
 
 	ex(" Real(1).is_int() ")
 	ex(" Real(1000).is_int() ")
 	ex(" Real('1e500').is_int() ")
-
 	getcontext().prec = 30
 	pi = Real.pi()
 	sq = Real.sqrt
@@ -803,6 +819,8 @@ if __name__ == '__main__' : # short module test
 	ex(" binom(300+0j,150)")
 	ex(" binom(599,299)")
 	ex(" binom(Real(600),300)")
+	ex(" binom(600,300)")
+	ex(" binom(21701,9689)")
 	ex(" Complex(30-40j).abs()")
 	ex(" Complex(12-5j).abs()")
 	print()
