@@ -5,8 +5,10 @@ from complex import *
 The precision set or get by __getcontext().prec__ variable.
 
 Content:
-<code>
-def binom(x,y): Binomial coeficient. y can int type, x can int, float, decimal, complex, Real, Complex types
+```bash
+def binom(x,y): Binomial coeficient.
+					y can int type,
+					x can int, float, decimal, complex, Real, Complex types
 
 def pi() :
     	return Complex(Real.pi())
@@ -18,8 +20,8 @@ def j():
     	return Complex(1j)
 
 class Real(Decimal) : #extensions for decimal
-    	def pi() :
-    	def e():
+	  def pi() :
+	  def e():
       def cos(self):
       def sin(self):
       def cos(self):
@@ -97,4 +99,4 @@ class Complex(object):
      	def is_zero(self):
      	def sqrt(self):
      	def to_eng_string(self):
-</code>
+```
