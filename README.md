@@ -63,35 +63,35 @@ class Complex(object):
      	def asinh(self):
      	def atanh(self):
      	def ln(self):
-     	def __pow__(self,other):      
-	    def __rpow__(self,other):
-     	def __str__(self):
-     	def __repr__(self):
-     	def __abs__(self):
-     	def abs(self):
-     	def __add__(self,other):
-     	def __radd__(self,other):
-     	def __sub__(self,other):
-     	def __rsub__(self,other):
-     	def __mul__(self,other):
-     	def __rmul__(self,other):
-     	def __floordiv__(self,other):
-     	def __rfloordiv__(self,other):
-     	def __truediv__(self,other):
-     	def __rtruerdiv__(self,other):
-     	def __neg__(self):
-     	def __pos__(self):
-     	def __inverse__(self):
-     	def __mod__(self,other):
-     	def __complex__(self):
-     	def __int__(self):
-     	def __float__(self):
-     	def __lt__(self,other):
-     	def __le__(self,other):
-     	def __eq__(self,other):
-     	def __ne__(self,other):
-     	def __gt__(self,other):
-     	def __ge__(self,other):
+     	def __pow__(self,other):    # Complex ** other
+	    def __rpow__(self,other):	# other ** Complex
+     	def __str__(self):			# to string
+     	def __repr__(self):			# debug string
+     	def __abs__(self):			# abs( Complex )
+     	def abs(self):				# Complex.abs()
+     	def __add__(self,other):	# Complex + other
+     	def __radd__(self,other):	# other + Complex
+     	def __sub__(self,other):	# Complex - other
+     	def __rsub__(self,other):	# other - Complex
+     	def __mul__(self,other):	# Complex * other
+     	def __rmul__(self,other):	# other * Complex
+     	def __floordiv__(self,other):	# Complex.real() // other
+     	def __rfloordiv__(self,other):	# Complex(other) // Complex
+     	def __truediv__(self,other):	# Complex / other
+     	def __rtruerdiv__(self,other):	# other / Complex
+     	def __neg__(self):			# -Complex
+     	def __pos__(self):			# normalizale imagine and real part together
+     	def __inverse__(self):		# 1 / Complex
+     	def __mod__(self,other):	# Complex % other   #  a + b * ciel(-a/b)
+     	def __complex__(self):		# complex(Complex)
+     	def __int__(self):			# int(Complex)
+     	def __float__(self):		# float(Complex)
+     	def __lt__(self,other):		# Complex < other
+     	def __le__(self,other):		# Complex <= other
+     	def __eq__(self,other):		# Complex == other
+     	def __ne__(self,other):		# Complex != other
+     	def __gt__(self,other):		# Complex > other
+     	def __ge__(self,other):		# Complex >= other
      	def is_finite(self):
      	def is_infinite(self):
      	def is_nan(self):
